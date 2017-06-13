@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.islxz.weather.activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/main_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/fragment_srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/fragment_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:padding="10dp">
+
+                        <Button
+                            android:id="@+id/fragment_btn_more_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:text="更多城市"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size1"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/fragment_tv_city_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="海淀"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_title_size"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/fragment_tv_now_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="08:51"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size1"
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:gravity="center_vertical|right"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/fragment_tv_tmp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20℃"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size2"/>
+
+                            <TextView
+                                android:id="@+id/fragment_tv_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="晴"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_title_size"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@color/ll_background"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="预报"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_title_size"
+                                android:textStyle="bold"/>
+
+                            <LinearLayout
+                                android:id="@+id/fragment_ll_hourly_forecast"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"></LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="175dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@color/ll_background"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="空气质量"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_title_size"
+                                android:textStyle="bold"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/fragment_tv_aqi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="104"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size2"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="AQI指数"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size1"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+
+                                    <TextView
+                                        android:id="@+id/fragment_tv_pm25"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="104"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size2"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="PM2.5指数"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size1"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@color/ll_background"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="生活建议"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_title_size"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/fragment_tv_comf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="15dp"
+                                android:text="舒适度指数：较舒适（白天有雨，从而使空气湿度加大，会使人们感觉有点儿闷热，但早晚的天气很凉爽、舒适。）"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size1"/>
+
+                            <TextView
+                                android:id="@+id/fragment_tv_cw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="15dp"
+                                android:text="洗车指数：不宜（不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。）"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size1"/>
+
+                            <TextView
+                                android:id="@+id/fragment_tv_sport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="15dp"
+                                android:text="运动指数：较不宜（有降水，且风力较强，推荐您在室内进行低强度运动；若坚持户外运动，请选择避雨防风的地点。）"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size1"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/drawer_background"
+        android:orientation="vertical"
+        android:paddingTop="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp">
+
+            <Button
+                android:id="@+id/fragment_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="返回"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size1"/>
+
+            <TextView
+                android:id="@+id/fragment_tv_select_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="海淀"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_title_size2"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#2f3640"/>
+
+        <ListView
+            android:id="@+id/fragment_lv_city_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
